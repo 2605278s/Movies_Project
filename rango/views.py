@@ -29,6 +29,21 @@ def about(request):
 
     return render(request, 'rango/about.html', context=context_dict)
 
+def statistics(request):
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/statistics.html', context=context_dict)
+
+def contact_us(request):
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/contact_us.html', context=context_dict)
+
+
 def show_category(request, category_name_slug):
     context_dict = {}
 
