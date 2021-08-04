@@ -15,18 +15,16 @@
       <li>Contact regarding other issues</li>
     </ul>
 </div>
-<div class="container">
-    <form action="action_page.php">
-  
-      <label for="fname">Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name.."><br />
+<div>
+  <form id="ContactUsForm" method="post" action="{% url 'rango:contact_us' %}">
 
-  
-      <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-  
-      <input type="submit" value="Submit">
-  
-    </form>
-  </div>
+      {% csrf_token %}
+            {% for field in form %}
+          {{ field.errors }}
+          {{ field.help_text }}
+          {{ field }}
+      {% endfor %}
+      <input type="submit" name="submit"  />
+  </form>
+</div>
 {% endblock %}

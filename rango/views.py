@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from rango.models import Category, Page
-from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
+from rango.models import Category, ContactUs, Page
+from rango.forms import CategoryForm, ContactUsForm, PageForm, UserForm, UserProfileForm
 from datetime import datetime
 
 def index(request):
@@ -37,11 +37,18 @@ def statistics(request):
     return render(request, 'rango/statistics.html', context=context_dict)
 
 def contact_us(request):
-    context_dict = {}
-    visitor_cookie_handler(request)
-    context_dict['visits'] = request.session['visits']
+    form = ContactUsForm()
 
-    return render(request, 'rango/contact_us.html', context=context_dict)
+    if request.method == 'POST':
+        form = ContactUsForm(request.POST)
+
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect(reverse('rango:index'))
+        else:
+            print(form.errors)
+    
+    return render(request, 'rango/contact_us.html', {'form': form})
 
 
 def show_category(request, category_name_slug):

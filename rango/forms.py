@@ -1,5 +1,5 @@
 from django import forms
-from rango.models import Page, Category
+from rango.models import ContactUs, Page, Category
 from django.contrib.auth.models import User
 from rango.models import UserProfile
 
@@ -47,3 +47,12 @@ class UserProfileForm(forms.ModelForm):
             class Meta:
                 model = UserProfile
                 fields = ('website', 'picture')
+
+
+class ContactUsForm(forms.ModelForm):
+    name = forms.CharField(max_length=ContactUs.NAME_MAX_LENGTH, help_text="Name",)
+    subject = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Write Something'}), max_length=ContactUs.SUBJECT_MAX_LENGTH, help_text="Subject",  )
+
+    class Meta:
+        model = ContactUs
+        fields = ('name','subject')

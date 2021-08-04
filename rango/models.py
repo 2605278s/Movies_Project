@@ -39,3 +39,13 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class ContactUs(models.Model):
+    NAME_MAX_LENGTH = 128
+    SUBJECT_MAX_LENGTH = 5000
+    name =  models.CharField(max_length=NAME_MAX_LENGTH)
+    subject = models.CharField(max_length=SUBJECT_MAX_LENGTH)
+    class Meta:
+        verbose_name_plural = 'Contact us queries'
+    def __str__(self):
+        return self.name
