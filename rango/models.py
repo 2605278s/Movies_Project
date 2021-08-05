@@ -49,3 +49,4 @@ class ContactUs(models.Model):
         verbose_name_plural = 'Contact us queries'
     def __str__(self):
         return self.name
+

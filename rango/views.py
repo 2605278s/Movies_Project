@@ -3,9 +3,11 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from rango.models import Category, ContactUs, Page
+from rango.models import Category, ContactUs, Page, User
 from rango.forms import CategoryForm, ContactUsForm, PageForm, UserForm, UserProfileForm
 from datetime import datetime
+from django.db.models import Count
+
 
 def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
@@ -29,8 +31,26 @@ def about(request):
 
     return render(request, 'rango/about.html', context=context_dict)
 
+
+
+
 def statistics(request):
-    context_dict = {}
+
+    user_count = User.objects.count()
+    film_count = Page.objects.count()
+    list1=[]
+    list2=[]
+    categories = Page.objects.filter().order_by('category').values('category__name').annotate(count=Count('category__name'))
+    for i in categories:
+        list1.append(str(i.get('category__name')))
+        list2.append(i.get('count'))
+   
+
+    context_dict = {'user_count' : user_count,
+                    'film_count' : film_count,
+                    'list1' :list1 ,
+                    'list2' : list2,
+                    }
     visitor_cookie_handler(request)
     context_dict['visits'] = request.session['visits']
 

@@ -8,9 +8,43 @@
 {% block body_block %}
 <h1>STATISTICS OF THE PAGE:</h1>
 <div>
-    Number of users:<br />
-    Number of films:<br />
+    Number of users : {{user_count}}<br />
+    Number of films: {{film_count}}<br />
     Distribution of films over categories:<br />
 </div>
+
+
+
+
+
+ <div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+ </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script><script>
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{list2}},
+          backgroundColor: [
+            '#ff0000', '#0000ff',  '#ffff26'
+          ],
+          label: 'Population'
+        }],
+        labels: ['Python','Django','Other Frameworks']
+      },
+      options: {
+        responsive: true
+      }
+    };
+ 
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+  </script>
+
+
+
 
 {% endblock %}
