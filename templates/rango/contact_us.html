@@ -6,25 +6,30 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>CONTACT US</h1>
+<br />
+<h1>&emsp; &emsp;CONTACT US</h1><br />
 <div>
-    Fill in the form bellow if you would like to contact our team regarding the topics bellow:<br />
+  &emsp; &emsp; Fill in the form bellow if you would like to contact our team regarding the topics bellow:<br />
     <ul>
-      <li>Request to add a new film for reviewing</li>
-      <li>Report inapropriate reviews</li>
-      <li>Contact regarding other issues</li>
+      <li>Request to add a new film for reviewing;</li>
+      <li>Report inapropriate reviews;</li>
+      <li>Contact regarding other issues.</li>
     </ul>
 </div>
 <div>
-  <form id="ContactUsForm" method="post" action="{% url 'rango:contact_us' %}">
+  <form id="ContactUsForm" method="post" action="{% url 'rango:contact_us' %}" >
 
       {% csrf_token %}
-            {% for field in form %}
-          {{ field.errors }}
-          {{ field.help_text }}
-          {{ field }}
+      &emsp;  {% for field in form %}
+      &emsp;   {{ field.errors }}<br />
+      &emsp;    {{ field.help_text }}<br />
+      &emsp;   {{ field }}
       {% endfor %}
-      <input type="submit" name="submit"  />
-  </form>
+    
+      <br />
+      &emsp; <input type="submit" name="submit" style="background-color: grey; border: none" />
+  
+    </form>
 </div>
+
 {% endblock %}
