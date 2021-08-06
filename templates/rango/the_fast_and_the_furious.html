@@ -1,0 +1,71 @@
+{% extends 'rango/base.html' %}
+{% load static  %}
+
+{% block title_block %}
+    Contact us
+{% endblock %}
+
+{% block body_block %}
+<br />
+<h1>&emsp; &emsp;The Fast and the Furious</h1> 
+<h6><i>&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;2001, Action, 1h 47m</i></h6>
+<div style=float:right;margin:40px;margin-right:-30px;><img style=width:60%;height:auto; src="{% static 'images/fast.jpg' %}"
+    alt="Photo of Fast and Furious"/></div>
+<div>
+<div style=width:850px;margin:60px;>
+    <h5 style=margin-left:20px;margin-bottom:-5px;> Description of the film:</h5><br />
+    <p style="text-align:justify">Dominic Toretto (Vin Diesel) enjoys the adrenaline of street car racing and his fans treat him like a rock star. After a blazing encounter with the ruthless Johnny Tran, Dom decides to take Brian (Paul Walker), a newcomer to street racing, under his wing. Dom's sister Mia sees something she likes in Brian, too. Trouble is, neither of them realize he's an undercover cop, and Dominic and his rival Johnny Tran are both the prime suspects in a case involving dirty money and big-rig hijacking.</p>
+</div>
+      <div class="rating"; style=margin-left:80px;margin-top:-15px;>
+        <h6 >Rate the film out of 5 stars:</h6>
+        <a href="#5" title="Give 5 stars">★</a>
+          <a href="#4" title="Give 4 stars">★</a>
+          <a href="#3" title="Give 3 stars">★</a>
+          <a href="#2" title="Give 2 stars">★</a>
+          <a href="#1" title="Give 1 star">★</a>
+      </div>
+
+
+      <div class="edd-reviews-form comment-respond" id="edd-reviews-respond">
+        <h3 id="edd-reviews-review-title" class="comment-reply-title edd-reviews-review-title" style=margin-left:60px;margin-top:60px;>Write a review</h3>
+        <form action="/downloads/test-title/?review_submitted=1" method="post" name="edd-reviews-form" id="edd-reviews-form" class="comment-form edd-reviews-form">
+            <fieldset>
+                <div class="edd-reviews-form-inner">
+                    <p class="edd-reviews-review-form-review-title">
+                        <label for="edd-reviews-review-title" style=margin-left:60px;margin-top:10px;>Review Title <span class="required">*</span></label>
+                        <input type="text" id="edd-reviews-review-title" class="edd-reviews-review-title" name="edd-reviews-review-title" value="" size="30" aria-required="true" required="required" />
+                    </p><!-- /.edd-reviews-review-form-review-title -->
+                    <p class="edd-reviews-review-form-rating">
+                        <span class="edd-reviews-star-rating-container">
+                            <span class="edd-reviews-stars-filled">
+                                <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-1" data-rating="1"></span>
+                                <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-2" data-rating="2"></span>
+                                <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-3" data-rating="3"></span>
+                                <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-4" data-rating="4"></span>
+                                <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-5" data-rating="5"></span>
+                            </span>
+                            <span class="edd-reviews-stars-empty">
+                                <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-1" data-rating="1"></span>
+                                <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-2" data-rating="2"></span>
+                                <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-3" data-rating="3"></span>
+                                <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-4" data-rating="4"></span>
+                                <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-5" data-rating="5"></span>
+                            </span>
+                            <input type="hidden" name="edd-reviews-review-rating" id="edd-reviews-star-rating" value="" />
+                        </span>							
+                    </p><!-- /.edd-reviews-review-form-rating -->
+                    <p class="edd-reviews-review-form-review">
+                        <label for="edd-reviews-review" style=margin-left:60px;margin-top:10px;>Review <span class="required">*</span></label><br />
+                        <textarea id="edd-reviews-review" name="edd-reviews-review" cols="45" rows="8" aria-required="true" required="required"style=margin-left:60px;margin-top:10px;></textarea>
+                    </p><!-- /.edd-reviews-review-form-review -->
+                    <p class="edd-reviews-review-form-submit">
+                        <input type="submit" class="edd-reviews-review-form-submit" id="edd-reviews-review-form-submit" name="edd-reviews-review-form-submit" value="Post Review" />
+                    </p><!-- /.edd-reviews-review-form-submit -->
+                    <input type="hidden" name="edd-reviews-review-post-ID" value="2724" />
+                    <input type="hidden" name="edd_action" value="reviews_process_review" />
+                </div><!-- /.edd-reviews-form-inner -->
+            </fieldset>
+        </form><!-- /#edd-reviews-form -->
+    </div><!-- /.edd-reviews-form -->
+
+{% endblock %}

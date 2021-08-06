@@ -24,14 +24,19 @@ def index(request):
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
-    # Spoiler: now you DO need a context dictionary!
     context_dict = {}
     visitor_cookie_handler(request)
     context_dict['visits'] = request.session['visits']
 
     return render(request, 'rango/about.html', context=context_dict)
 
+def the_fast_and_the_furious(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
 
+    return render(request, 'rango/the_fast_and_the_furious.html', context=context_dict)
 
 
 def statistics(request):

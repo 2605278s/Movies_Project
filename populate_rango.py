@@ -5,43 +5,65 @@ import django
 django.setup()
 from rango.models import Category, Page
 
-# I faced issues with this code, so I had to re-copy it from what I have previously written and add some additional codes, by following the book
+
 
 def populate():
-    python_pages = [
-        {'title': 'Official Python Tutorial',
-         'url':'http://docs.python.org/3/tutorial/',
-         'views': 53},
-        {'title':'How to Think like a Computer Scientist',
-         'url':'http://www.greenteapress.com/thinkpython/',
-         'views': 76},
-        {'title':'Learn Python in 10 Minutes',
-         'url':'http://www.korokithakis.net/tutorials/python/',
-         'views': 104} ]
+    action_films = [
+        {'title':'The Fast and the Furious',
+         'url': 'http://127.0.0.1:8000/rango/the_fast_and_the_furious/',
+         'views': 76,
+        },
+        {'title':'The Expendables',
+        'url': 'https://www.youtube.com/watch?v=8KtYRALe-xo',
+         'views': 60,}
+        ]
+    comedy_films = [
+        {'title':'Deadpool',
+        'url': 'https://www.youtube.com/watch?v=ONHBaC-pfsk',
+         'views': 118,
+        },
+        {'title':'Hangover',
+        'url': 'https://www.youtube.com/watch?v=tcdUhdOlz9M',
+         'views': 91,}, 
+
+        {'title':'Home Alone',
+        'url': 'https://www.youtube.com/watch?v=jEDaVHmw7r4',
+         'views': 5000,} ]
     
-    django_pages = [
-        {'title':'Official Django Tutorial',
-         'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
-         'views': 27},
-        {'title':'Django Rocks',
-         'url':'http://www.djangorocks.com/',
-         'views': 60},
-        {'title':'How to Tango with Django',
-         'url':'http://www.tangowithdjango.com/',
-         'views': 12} ]
+    sciencefiction_films = [
+        {'title':'Transformers',
+        'url': 'https://www.youtube.com/watch?v=dxQxgAfNzyE',
+        'views': 27,},
+
+        {'title': 'Back to the Future',
+        'url': 'https://www.youtube.com/watch?v=qvsgGtivCgs',
+         'views': 60,} ]
+
+    animation_films = [
+        {'title':'Minions',
+        'url': 'https://www.youtube.com/watch?v=eisKxhjBnZ0',
+         'views': 2000,},
+         {'title':'Coco',
+         'url': 'https://www.youtube.com/watch?v=Rvr68u6k5sI',
+         'views': 3500,}
+    ]
+
+    drama_films = [
+        {'title':'Titanic',
+        'url': 'https://www.youtube.com/watch?v=jUm88F3MEbQ',
+         'views': 20200,
+        },
+        {'title':'Black Panther',
+        'url': 'https://www.youtube.com/watch?v=xjDjIWPwcPU',
+         'views': 200,}
+    ]
     
-    other_pages = [
-        {'title':'Bottle',
-         'url':'http://bottlepy.org/docs/dev/',
-         'views': 3},
-        {'title':'Flask',
-         'url':'http://flask.pocoo.org',
-         'views': 789} ]
-    
-    cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
-            'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
-            'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16} }
-    
+    cats = {'Action': {'pages': action_films, 'views': 128, 'likes': 64},
+            'Comedy': {'pages': comedy_films, 'views': 64, 'likes': 32},
+            'Science Fiction': {'pages': sciencefiction_films, 'views': 32, 'likes': 16},
+            'Animation': {'pages': animation_films, 'views': 64, 'likes': 32},
+            'Drama': {'pages': drama_films, 'views': 64, 'likes': 32},}
+
     for cat, cat_data in cats.items():
         c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
         for p in cat_data['pages']:
