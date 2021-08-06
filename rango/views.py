@@ -46,6 +46,78 @@ def the_expendables(request):
 
     return render(request, 'rango/the_expendables.html', context=context_dict)
 
+def deadpool(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/deadpool.html', context=context_dict)
+
+def hangover(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/hangover.html', context=context_dict)
+
+def home_alone(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/home_alone.html', context=context_dict)
+
+def minions(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/minions.html', context=context_dict)
+
+def coco(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/coco.html', context=context_dict)
+
+def titanic(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/titanic.html', context=context_dict)
+
+def black_panther(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/black_panther.html', context=context_dict)
+
+def transformers(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/transformers.html', context=context_dict)
+
+def back_to_the_future(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/back_to_the_future.html', context=context_dict)
+
 def statistics(request):
 
     user_count = User.objects.count()

@@ -19,42 +19,42 @@ def populate():
         ]
     comedy_films = [
         {'title':'Deadpool',
-        'url': 'https://www.youtube.com/watch?v=ONHBaC-pfsk',
+        'url': 'http://127.0.0.1:8000/rango/deadpool/',
          'views': 118,
         },
         {'title':'Hangover',
-        'url': 'https://www.youtube.com/watch?v=tcdUhdOlz9M',
+        'url': 'http://127.0.0.1:8000/rango/hangover/',
          'views': 91,}, 
 
         {'title':'Home Alone',
-        'url': 'https://www.youtube.com/watch?v=jEDaVHmw7r4',
+        'url': 'http://127.0.0.1:8000/rango/home_alone/',
          'views': 5000,} ]
     
     sciencefiction_films = [
         {'title':'Transformers',
-        'url': 'https://www.youtube.com/watch?v=dxQxgAfNzyE',
+        'url': 'http://127.0.0.1:8000/rango/transformers/',
         'views': 27,},
 
         {'title': 'Back to the Future',
-        'url': 'https://www.youtube.com/watch?v=qvsgGtivCgs',
+        'url': 'http://127.0.0.1:8000/rango/back_to_the_future/',
          'views': 60,} ]
 
     animation_films = [
         {'title':'Minions',
-        'url': 'https://www.youtube.com/watch?v=eisKxhjBnZ0',
+        'url': 'http://127.0.0.1:8000/rango/minions/',
          'views': 2000,},
          {'title':'Coco',
-         'url': 'https://www.youtube.com/watch?v=Rvr68u6k5sI',
+         'url': 'http://127.0.0.1:8000/rango/coco/',
          'views': 3500,}
     ]
 
     drama_films = [
         {'title':'Titanic',
-        'url': 'https://www.youtube.com/watch?v=jUm88F3MEbQ',
+        'url': 'http://127.0.0.1:8000/rango/titanic/',
          'views': 20200,
         },
         {'title':'Black Panther',
-        'url': 'https://www.youtube.com/watch?v=xjDjIWPwcPU',
+        'url': 'http://127.0.0.1:8000/rango/black_panther/',
          'views': 200,}
     ]
     

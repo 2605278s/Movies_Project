@@ -19,4 +19,13 @@ urlpatterns = [
     path('contact_us/', views.contact_us, name='contact_us'),
     path('the_fast_and_the_furious/', views.the_fast_and_the_furious, name='the_fast_and_the_furious'),
     path('the_expendables/', views.the_expendables, name='the_expendables'),
+    path('deadpool/', views.deadpool, name='deadpool'),
+    path('hangover/', views.hangover, name='hangover'),
+    path('home_alone/', views.home_alone, name='home_alone'),
+    path('minions/', views.minions, name='minions'),
+    path('coco/', views.coco, name='coco'),
+    path('titanic/', views.titanic, name='titanic'),
+    path('black_panther/', views.black_panther, name='black_panther'),
+    path('transformers/', views.transformers, name='transformers'),
+    path('back_to_the_future/', views.back_to_the_future, name='back_to_the_future'),
 ]
