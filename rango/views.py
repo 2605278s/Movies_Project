@@ -38,6 +38,13 @@ def the_fast_and_the_furious(request):
 
     return render(request, 'rango/the_fast_and_the_furious.html', context=context_dict)
 
+def the_expendables(request):
+    
+    context_dict = {}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    return render(request, 'rango/the_expendables.html', context=context_dict)
 
 def statistics(request):
 

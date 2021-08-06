@@ -18,4 +18,5 @@ urlpatterns = [
     path('statistics/', views.statistics, name='statistics'),
     path('contact_us/', views.contact_us, name='contact_us'),
     path('the_fast_and_the_furious/', views.the_fast_and_the_furious, name='the_fast_and_the_furious'),
+    path('the_expendables/', views.the_expendables, name='the_expendables'),
 ]

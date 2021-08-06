@@ -14,7 +14,7 @@ def populate():
          'views': 76,
         },
         {'title':'The Expendables',
-        'url': 'https://www.youtube.com/watch?v=8KtYRALe-xo',
+        'url': 'http://127.0.0.1:8000/rango/the_expendables/',
          'views': 60,}
         ]
     comedy_films = [
