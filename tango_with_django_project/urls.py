@@ -19,8 +19,15 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from rango import views
+from django.views.generic import TemplateView
+from django.contrib.auth.views import LogoutView
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('rango/', include('rango.urls')),
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name="index.html")),
+    path('accounts/', include('allauth.urls')),
+    path('logout', LogoutView.as_view()),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
