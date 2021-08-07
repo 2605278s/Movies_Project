@@ -333,3 +333,11 @@ def delete_user(request):
     current_user =  request.user
     current_user.delete()
     return redirect('rango:index')
+
+def all_contactus(request):
+    contactuslist = ContactUs.objects.all()
+    current_user = request.user
+    current_user_id = current_user.id
+
+    return render(request,'rango/contact_us_list.html',
+    {'contactuslist' : contactuslist , 'current_user':current_user_id} )

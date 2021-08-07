@@ -85,6 +85,9 @@
               <li > <a class="nav-link" href="{% url 'rango:about' %}">ABOUT US</a></li>
               <li > <a class="nav-link" href="{% url 'rango:contact_us' %}">CONTACT US</a></li>
               <li > <a class="nav-link" href="{% url 'rango:statistics' %}">STATISTICS</a></li>
+              {% if user.is_staff %}
+                    <li><a class="nav-link" href="{% url 'rango:list_contactus' %}">LIST OF CONTACT US</a></li>
+                    {% endif %}
             </ul>
     </nav>
 </div>
