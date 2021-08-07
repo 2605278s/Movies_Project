@@ -28,4 +28,6 @@ urlpatterns = [
     path('black_panther/', views.black_panther, name='black_panther'),
     path('transformers/', views.transformers, name='transformers'),
     path('back_to_the_future/', views.back_to_the_future, name='back_to_the_future'),
+    path('profile/',views.user_profile, name = "profile"),
+    path('deleteuser/',views.delete_user, name = "deleteuser"),
 ]

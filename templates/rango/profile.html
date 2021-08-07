@@ -1,0 +1,39 @@
+{% extends 'rango/base.html' %}
+{% load static  %}
+
+{% block title_block %}
+    About Rango
+{% endblock %}
+
+{% block body_block %}
+<div class="container">
+<h1> Edit your info</h1>
+
+
+
+{% if registered %}
+profile says: <strong>thank you for registering!</strong>
+<a href="{% url 'rango:index' %}">Return to the homepage.</a><br />
+{% else %}
+
+
+
+<form  id="user_form" method="post" action="{% url 'rango:profile' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+
+    <input type="submit" name="submit" value="Update"  class = "btn btn-secondaty m-4"/>
+
+</form>
+<a href="{% url 'rango:deleteuser' %}" class = "btn btn-outline-danger btn-sn m-3" >Delete me</a>
+{% if user.is_authenticated %}
+        
+  <p>Welcome, You are logged in as {{ user.username }}</p>
+    {% else %}
+    
+  
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

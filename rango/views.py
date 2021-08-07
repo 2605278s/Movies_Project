@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from rango.models import Category, ContactUs, Page, User
+from rango.models import Category, ContactUs, Page, User,UserProfile
 from rango.forms import CategoryForm, ContactUsForm, PageForm, UserForm, UserProfileForm
 from datetime import datetime
 from django.db.models import Count
@@ -290,3 +290,46 @@ def visitor_cookie_handler(request):
     
     request.session['visits'] = visits
 
+def user_profile(request):
+    registered = False
+    current_user =  request.user
+    current_user_id = request.user.id
+    current_user_username = current_user.username
+    user = User.objects.get(username = current_user_username)
+    try:
+        userprofile = UserProfile.objects.get(user = user)
+    except:
+        UserProfile.objects.create(user=user, phone = '')
+        userprofile = UserProfile.objects.get(user = user)
+    user_form = UserForm(request.POST or None, instance = user)
+
+    profile_form = UserProfileForm(request.POST or None, instance=userprofile)
+
+
+    if user_form.is_valid() and profile_form.is_valid():
+        current_user =  request.user
+        #current_user.delete()
+        
+        user = user_form.save()
+        user.set_password(user.password)
+        user.save()
+
+        profile = profile_form.save(commit=False)
+        profile.user = user
+
+        if 'picture' in request.FILES:
+            profile.picture = request.FILES['picture']
+            
+        profile.save()
+        registered = True
+        return redirect('rango:index')
+    else:
+        print(user_form.errors, profile_form.errors)
+    
+    
+    return render(request, 'rango/profile.html', context={'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+
+def delete_user(request):
+    current_user =  request.user
+    current_user.delete()
+    return redirect('rango:index')
