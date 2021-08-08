@@ -10,51 +10,51 @@ from rango.models import Category, Page
 def populate():
     action_films = [
         {'title':'The Fast and the Furious',
-         'url': 'http://127.0.0.1:8000/rango/the_fast_and_the_furious/',
+         'url': '/rango/the_fast_and_the_furious/',
          'views': 76,
         },
         {'title':'The Expendables',
-        'url': 'http://127.0.0.1:8000/rango/the_expendables/',
+        'url': '/rango/the_expendables/',
          'views': 60,}
         ]
     comedy_films = [
         {'title':'Deadpool',
-        'url': 'http://127.0.0.1:8000/rango/deadpool/',
+        'url': '/rango/deadpool/',
          'views': 118,
         },
         {'title':'Hangover',
-        'url': 'http://127.0.0.1:8000/rango/hangover/',
+        'url': '/rango/hangover/',
          'views': 91,}, 
 
         {'title':'Home Alone',
-        'url': 'http://127.0.0.1:8000/rango/home_alone/',
+        'url': '/rango/home_alone/',
          'views': 5000,} ]
     
     sciencefiction_films = [
         {'title':'Transformers',
-        'url': 'http://127.0.0.1:8000/rango/transformers/',
+        'url': '/rango/transformers/',
         'views': 27,},
 
         {'title': 'Back to the Future',
-        'url': 'http://127.0.0.1:8000/rango/back_to_the_future/',
+        'url': '/rango/back_to_the_future/',
          'views': 60,} ]
 
     animation_films = [
         {'title':'Minions',
-        'url': 'http://127.0.0.1:8000/rango/minions/',
+        'url': '/rango/minions/',
          'views': 2000,},
          {'title':'Coco',
-         'url': 'http://127.0.0.1:8000/rango/coco/',
+         'url': '/rango/coco/',
          'views': 3500,}
     ]
 
     drama_films = [
         {'title':'Titanic',
-        'url': 'http://127.0.0.1:8000/rango/titanic/',
+        'url': '/rango/titanic/',
          'views': 20200,
         },
         {'title':'Black Panther',
-        'url': 'http://127.0.0.1:8000/rango/black_panther/',
+        'url': '/rango/black_panther/',
          'views': 200,}
     ]
     

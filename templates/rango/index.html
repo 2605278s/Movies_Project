@@ -17,8 +17,8 @@
  
 </div></center>
 
-<div>
-     <h2>&emsp;  Best rated: </h2>
+<div class="best-rated">
+     <h2> Best rated: </h2>
     {% if categories %}
     <ul>
     {% for category in categories %}
@@ -28,10 +28,8 @@
 {% else %}
     <strong>There are no categories present.</strong>
 {% endif %}
-</div>
-    
-<div> 
-      <h2>&emsp;Most reviewed:</h2>
+ 
+      <h2>Most reviewed:</h2>
 {% if pages %}
     <ul>
     {% for page in pages %}
