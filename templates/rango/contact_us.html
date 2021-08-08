@@ -15,7 +15,9 @@
       <li>Contact regarding other issues.</li>
     </ul>
 </div>
+
 <div class = "paddingbtm60">
+   <!-- the contact form is added to the page -->
   <form class="contact-info";id="ContactUsForm" method="post" action="{% url 'rango:contact_us' %}" >
 
       {% csrf_token %}

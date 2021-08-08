@@ -9,6 +9,7 @@
 <br />
 <h1 class="title">Home Alone</h1> 
 <h6 class="info">1990, Comedy, 1h 42m</i></h6>
+<! –– the photo of the film is inserted on the right side of the page ––>
 <div class="photo"><img src="{% static 'images/home.jpg' %}"
     alt="Photo of Home Alone"/></div>
 
@@ -22,52 +23,37 @@
       </ul>
 </div>
 
-
+<! –– the embeded trailer of the film is inserted on the right side of the page ––> 
       <div>
         <iframe class="trailer" src="https://www.youtube.com/embed/jEDaVHmw7r4" frameborder="0" allowfullscreen></iframe>
       </iframe>
         </div>
 
-        <div class = "paddingbtm60">
+           <!-- creating a write a review form -->
+           <div class = "paddingbtm60">
             <h3 class="review-title">Write a review</h3>
-            <form action="/downloads/test-title/?review_submitted=1" method="post" name="edd-reviews-form" id="edd-reviews-form" class="comment-form edd-reviews-form">
+            <form>
                 <fieldset>
-                    <div class="edd-reviews-form-inner">
-                        <p class="edd-reviews-review-form-review-title">
-                            <label for="edd-reviews-review-title" class="review-text">Review Title <span class="required">*</span></label>
-                            <input type="text" id="edd-reviews-review-title" class="edd-reviews-review-title" name="edd-reviews-review-title" value="" size="30" aria-required="true" required="required" />
-                        </p><!-- /.edd-reviews-review-form-review-title -->
-                        <p class="edd-reviews-review-form-rating">
-                            <span class="edd-reviews-star-rating-container">
-                                <span class="edd-reviews-stars-filled">
-                                    <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-1" data-rating="1"></span>
-                                    <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-2" data-rating="2"></span>
-                                    <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-3" data-rating="3"></span>
-                                    <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-4" data-rating="4"></span>
-                                    <span class="dashicons dashicons-star-filled edd-reviews-star-rating edd-reviews-star-rating-5" data-rating="5"></span>
-                                </span>
-                                <span class="edd-reviews-stars-empty">
-                                    <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-1" data-rating="1"></span>
-                                    <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-2" data-rating="2"></span>
-                                    <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-3" data-rating="3"></span>
-                                    <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-4" data-rating="4"></span>
-                                    <span class="dashicons dashicons-star-empty edd-reviews-star-rating edd-reviews-star-rating-5" data-rating="5"></span>
-                                </span>
-                                <input type="hidden" name="edd-reviews-review-rating" id="edd-reviews-star-rating" value="" />
-                            </span>							
-                        </p><!-- /.edd-reviews-review-form-rating -->
-                        <p class="edd-reviews-review-form-review">
-                            <label for="edd-reviews-review" lass="review-text" class="review-text">Review <span class="required">*</span></label><br />
-                            <textarea class="review-text" id="edd-reviews-review" name="edd-reviews-review" cols="45" rows="8" aria-required="true" required="required"></textarea>
-                        </p><!-- /.edd-reviews-review-form-review -->
-                        <p class="edd-reviews-review-form-submit">
-                            <input type="submit" class="review-text" id="edd-reviews-review-form-submit" name="edd-reviews-review-form-submit" value="Post Review"/>
-                        </p><!-- /.edd-reviews-review-form-submit -->
-                        <input type="hidden" name="edd-reviews-review-post-ID" value="2724" />
-                        <input type="hidden" name="edd_action" value="reviews_process_review" />
-                    </div><!-- /.edd-reviews-form-inner -->
+                    <div>
+                        <p>
+                            <label class="review-text">Review Title <span>*</span></label>
+                            <input type="text" value="" size="30" aria-required="true" required="required" />
+                        </p>
+                        <p>
+                                <input type="hidden" value="" />						
+                        </p>
+                        <p>
+                            <label class="review-text">Review <span>*</span></label><br />
+                            <textarea class="review-text" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                        </p>
+                        <p>
+                            <input type="submit" class="review-text" value="Post Review"/>
+                        </p>
+                        <input type="hidden"  value="2724" />
+                        <input type="hidden"  value="reviews_process_review" />
+                    </div>
                 </fieldset>
-            </form><!-- /#edd-reviews-form -->
-        </div><!-- /.edd-reviews-form -->
+            </form>
+        </div>
        
     {% endblock %}

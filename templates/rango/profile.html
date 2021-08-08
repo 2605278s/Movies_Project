@@ -24,9 +24,12 @@ Moʃvies says: <strong>thank you for editing your info for your safety you have 
     {{ user_form.as_p }}
     {{ profile_form.as_p }}
 
+ <!-- creating an update details button bellow -->
     <input type="submit" name="submit" value="Update"  class="btn btn-lg btn-primary btn-block "/>
 
 </form>
+
+ <!-- creating a delete account button bellow-->
 <a href="{% url 'rango:deleteuser' %}" class = "btn btn-lg btn-block  btn-outline-danger btn-sn mt-3 " >Delete</a>
 {% if user.is_authenticated %}
         

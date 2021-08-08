@@ -33,6 +33,7 @@
     </script>
 <p>Welcome, You are logged in as {{ user.username }}</p>
 {% else %}
+ <!-- code for allowing the user to use google login -->
 <div class="gmail-main"><img class="gmail" src="{% static 'images/gmail.jpg' %}"
   alt="Photo of Gmail"/>
 <a href="{% provider_login_url 'google' %}" class="gmail-url"> OR login via Google.</a>
