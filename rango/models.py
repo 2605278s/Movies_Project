@@ -53,3 +53,16 @@ class ContactUs(models.Model):
     def __str__(self):
         return self.name
 
+
+class Review(models.Model):
+    NAME_MAX_LENGTH = 128
+    FILM_MAX_LENGTH = 128
+    SUBJECT_MAX_LENGTH = 5000
+    title =  models.CharField(max_length=NAME_MAX_LENGTH)
+    film =  models.CharField(max_length=FILM_MAX_LENGTH)
+    review = models.CharField(max_length=SUBJECT_MAX_LENGTH)
+
+    def __str__(self):
+        return self.title
+
+

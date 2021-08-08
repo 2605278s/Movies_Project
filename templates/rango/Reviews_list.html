@@ -1,0 +1,35 @@
+{% extends 'rango/base.html' %}
+{% load static  %}
+
+{% block title_block %}
+    About Rango
+{% endblock %}
+
+{% block body_block %}
+
+
+{% if user.is_staff %}
+
+<h1>List of Reviews</h1>
+
+{% for i in  review_list%}
+<div class="card  m-5">
+    <!-- <div class="card-header">
+     Title: {{i.title}}}, Review for movie: {{i.film}}, 
+    </div>
+    <div class="card-body">
+      
+      <p class="card-text">{{i.review}}</p> -->
+      
+    </div>
+  </div>  
+{% endfor %}
+
+{% else %}
+<script>
+    window.location.href = "{% url 'rango:index' %}";
+    </script>
+    
+{% endif %}
+
+{% endblock %}

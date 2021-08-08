@@ -31,4 +31,6 @@ urlpatterns = [
     path('profile/',views.user_profile, name = "profile"),
     path('deleteuser/',views.delete_user, name = "deleteuser"),
     path('contact_us_list/',views.all_contactus, name = "list_contactus"),
+    path('add_review/', views.add_review, name='add_review'),
+    path('all_reviews/',views.all_reviews, name = "all_reviews"),
 ]

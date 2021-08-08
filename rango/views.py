@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from rango.models import Category, ContactUs, Page, User,UserProfile
-from rango.forms import CategoryForm, ContactUsForm, PageForm, UserForm, UserProfileForm
+from rango.models import Category, ContactUs, Page, Review, User,UserProfile
+from rango.forms import CategoryForm, ContactUsForm, PageForm, UserForm, UserProfileForm, ReviewForm
 from datetime import datetime
 from django.db.models import Count
 
@@ -342,3 +342,29 @@ def all_contactus(request):
 
     return render(request,'rango/contact_us_list.html',
     {'contactuslist' : contactuslist , 'current_user':current_user_id} )
+
+
+
+def add_review(request):
+    form = ReviewForm()
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect(reverse('rango:index'))
+        else:
+            print(form.errors)
+    
+    return render(request, 'rango/add_review.html', {'form': form})
+
+
+
+def all_reviews(request):
+    
+    review_list = Review.objects.all()
+  
+
+    return render(request,'rango/review_list.html',
+    {'review_list' : review_list  } )

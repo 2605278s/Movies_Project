@@ -1,4 +1,5 @@
 from django import forms
+from django.forms.widgets import HiddenInput
 from rango.models import ContactUs, Page, Category
 from django.contrib.auth.models import User
 from rango.models import UserProfile
@@ -75,4 +76,13 @@ class ContactUsForm(forms.ModelForm):
     class Meta:
         model = ContactUs
         fields = ('name','subject')
+
+class ReviewForm(forms.ModelForm):
+    title = forms.CharField(max_length=ContactUs.NAME_MAX_LENGTH, help_text="Title",)
+    review = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Write Something'}), max_length=ContactUs.SUBJECT_MAX_LENGTH, help_text="Review",  )
+    film = forms.CharField(max_length=ContactUs.NAME_MAX_LENGTH, help_text= 'Film')
+
+    class Meta:
+        model = ContactUs
+        fields = ('title','review','film')
 
