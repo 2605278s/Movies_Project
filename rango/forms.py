@@ -37,16 +37,35 @@ class PageForm(forms.ModelForm):
         return cleaned_data
 
 class UserForm(forms.ModelForm):
-            password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput())
+    
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password',)
 
-            class Meta:
-                model = User
-                fields = ('username', 'email', 'password',)
+    def __init__(self, *args, **kwargs):
+        super(UserForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if field.widget.attrs.get('class'):
+                field.widget.attrs['class'] += ' form-control'
+            else:
+                field.widget.attrs['class']='form-control'    
+
+                
 
 class UserProfileForm(forms.ModelForm):
-            class Meta:
-                model = UserProfile
-                fields = ('phone',)
+    class Meta:
+        model = UserProfile
+        fields = ('phone',)
+            
+    def __init__(self, *args, **kwargs):
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if field.widget.attrs.get('class'):
+                field.widget.attrs['class'] += ' form-control'
+            else:
+                field.widget.attrs['class']='form-control'  
+        
 
 
 class ContactUsForm(forms.ModelForm):
@@ -56,3 +75,4 @@ class ContactUsForm(forms.ModelForm):
     class Meta:
         model = ContactUs
         fields = ('name','subject')
+

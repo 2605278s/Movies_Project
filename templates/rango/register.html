@@ -16,7 +16,7 @@
   <p>Welcome, You are logged in as {{ user.username }}</p>
     {% else %}
     
-  <a href="{% provider_login_url 'google' %}">Login With Google</a>
+  
     {% endif %}
 
 {% if registered %}
@@ -25,7 +25,7 @@ Moʃvies says: <strong>thank you for registering!</strong>
 {% else %}
 
 
-
+<a href="{% provider_login_url 'google' %}">Login With Google</a>
 <form  id="user_form" method="post" action="{% url 'rango:register' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ user_form.as_p }}

@@ -290,6 +290,7 @@ def visitor_cookie_handler(request):
     
     request.session['visits'] = visits
 
+@login_required
 def user_profile(request):
     registered = False
     current_user =  request.user

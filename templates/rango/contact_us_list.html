@@ -9,6 +9,7 @@
 
 
 {% if user.is_staff %}
+
 <h1>List of contact us</h1>
 
 {% for i in  contactuslist%}
@@ -28,6 +29,7 @@
 <script>
     window.location.href = "{% url 'rango:index' %}";
     </script>
+    
 {% endif %}
 
 {% endblock %}

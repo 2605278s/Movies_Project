@@ -12,10 +12,11 @@
 
 
 {% if registered %}
-profile says: <strong>thank you for registering!</strong>
+Moʃvies says: <strong>thank you for editing your info for your safety you have been logged out!</strong>
 <a href="{% url 'rango:index' %}">Return to the homepage.</a><br />
-{% else %}
 
+{% else %}
+{% if user.is_authenticated%}
 
 
 <form  id="user_form" method="post" action="{% url 'rango:profile' %}" enctype="multipart/form-data">
@@ -23,17 +24,17 @@ profile says: <strong>thank you for registering!</strong>
     {{ user_form.as_p }}
     {{ profile_form.as_p }}
 
-    <input type="submit" name="submit" value="Update"  class = "btn btn-secondaty m-4"/>
+    <input type="submit" name="submit" value="Update"  class="btn btn-lg btn-primary btn-block "/>
 
 </form>
-<a href="{% url 'rango:deleteuser' %}" class = "btn btn-outline-danger btn-sn m-3" >Delete me</a>
+<a href="{% url 'rango:deleteuser' %}" class = "btn btn-lg btn-block  btn-outline-danger btn-sn mt-3 " >Delete</a>
 {% if user.is_authenticated %}
         
-  <p>Welcome, You are logged in as {{ user.username }}</p>
-    {% else %}
-    
+
   
     {% endif %}
+    {% endif %}
+
 </div>
 {% endif %}
 {% endblock %}
