@@ -7,14 +7,14 @@
 
 {% block body_block %}
 <br />
-<h1>&emsp; &emsp;Back to the Future</h1> 
-<h6><i>&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;1985, Science Fiction, 1h 56m</i></h6>
-<div><img style=float:right;width:33%;height:auto;margin-right:120px; src="{% static 'images/back.jpg' %}"
+<h1 class="title">Back to the Future</h1> 
+<h6 class="info"><i>1985, Science Fiction, 1h 56m</i></h6>
+<div class="photo"><img src="{% static 'images/back.jpg' %}"
     alt="Photo of Back to the Future"/></div>
 
-<div style=width:750px;margin:60px;>
-    <h5 style=margin-left:20px;margin-bottom:-5px;margin-top:-20px;> Description of the film:</h5><br />
-    <p style="text-align:justify">In this 1980s sci-fi classic, small-town California teen Marty McFly (Michael J. Fox) is thrown back into the '50s when an experiment by his eccentric scientist friend Doc Brown (Christopher Lloyd) goes awry. Traveling through time in a modified DeLorean car, Marty encounters young versions of his parents (Crispin Glover, Lea Thompson), and must make sure that they fall in love or he'll cease to exist. Even more dauntingly, Marty has to return to his own time and save the life of Doc Brown.</p>
+<div>
+    <h5 class="description"> Description of the film:</h5><br />
+    <p class="desc-text">In this 1980s sci-fi classic, small-town California teen Marty McFly (Michael J. Fox) is thrown back into the '50s when an experiment by his eccentric scientist friend Doc Brown (Christopher Lloyd) goes awry. Traveling through time in a modified DeLorean car, Marty encounters young versions of his parents (Crispin Glover, Lea Thompson), and must make sure that they fall in love or he'll cease to exist. Even more dauntingly, Marty has to return to his own time and save the life of Doc Brown.</p>
 </div>
       <div class="rating"; style=margin-left:80px;margin-top:-15px;>
         <h6 >Rate the film out of 5 stars:</h6>
@@ -25,18 +25,18 @@
           <a href="#1" title="Give 1 star">★</a>
       </div>
 
-      <div style=float:right;margin-right:-500px;margin-top:70px;>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qvsgGtivCgs" frameborder="0" allowfullscreen></iframe>
+      <div>
+        <iframe class="trailer" src="https://www.youtube.com/embed/qvsgGtivCgs" frameborder="0" allowfullscreen></iframe>
       </iframe>
         </div>
 
-      <div class="edd-reviews-form comment-respond" id="edd-reviews-respond">
-        <h3 id="edd-reviews-review-title" class="comment-reply-title edd-reviews-review-title" style=margin-left:60px;margin-top:60px;>Write a review</h3>
+        <div class = "paddingbtm60">
+        <h3 class="review-title">Write a review</h3>
         <form action="/downloads/test-title/?review_submitted=1" method="post" name="edd-reviews-form" id="edd-reviews-form" class="comment-form edd-reviews-form">
             <fieldset>
                 <div class="edd-reviews-form-inner">
                     <p class="edd-reviews-review-form-review-title">
-                        <label for="edd-reviews-review-title" style=margin-left:60px;margin-top:10px;>Review Title <span class="required">*</span></label>
+                        <label for="edd-reviews-review-title" class="review-text">Review Title <span class="required">*</span></label>
                         <input type="text" id="edd-reviews-review-title" class="edd-reviews-review-title" name="edd-reviews-review-title" value="" size="30" aria-required="true" required="required" />
                     </p><!-- /.edd-reviews-review-form-review-title -->
                     <p class="edd-reviews-review-form-rating">
@@ -59,11 +59,11 @@
                         </span>							
                     </p><!-- /.edd-reviews-review-form-rating -->
                     <p class="edd-reviews-review-form-review">
-                        <label for="edd-reviews-review" style=margin-left:60px;margin-top:10px;>Review <span class="required">*</span></label><br />
-                        <textarea id="edd-reviews-review" name="edd-reviews-review" cols="45" rows="8" aria-required="true" required="required"style=margin-left:60px;margin-top:10px;></textarea>
+                        <label for="edd-reviews-review" lass="review-text" class="review-text">Review <span class="required">*</span></label><br />
+                        <textarea class="review-text" id="edd-reviews-review" name="edd-reviews-review" cols="45" rows="8" aria-required="true" required="required"></textarea>
                     </p><!-- /.edd-reviews-review-form-review -->
                     <p class="edd-reviews-review-form-submit">
-                        <input type="submit" class="edd-reviews-review-form-submit" id="edd-reviews-review-form-submit" name="edd-reviews-review-form-submit" value="Post Review" style=margin:50px/>
+                        <input type="submit" class="review-text" id="edd-reviews-review-form-submit" name="edd-reviews-review-form-submit" value="Post Review"/>
                     </p><!-- /.edd-reviews-review-form-submit -->
                     <input type="hidden" name="edd-reviews-review-post-ID" value="2724" />
                     <input type="hidden" name="edd_action" value="reviews_process_review" />

@@ -6,10 +6,9 @@
 {% endblock %}
 
 {% block body_block %}
-<br />
-<h1>&emsp; &emsp;CONTACT US</h1><br />
-<div>
-  &emsp; &emsp; Fill in the form bellow if you would like to contact our team regarding the topics bellow:<br />
+
+<h1 class="heading">CONTACT US</h1><br />
+<div class="contact-info">Fill in the form bellow if you would like to contact our team regarding the topics bellow:<br />
     <ul>
       <li>Request to add a new film for reviewing;</li>
       <li>Report inapropriate reviews;</li>
@@ -17,17 +16,17 @@
     </ul>
 </div>
 <div class = "paddingbtm60">
-  <form id="ContactUsForm" method="post" action="{% url 'rango:contact_us' %}" >
+  <form class="contact-info";id="ContactUsForm" method="post" action="{% url 'rango:contact_us' %}" >
 
       {% csrf_token %}
-      &emsp;  {% for field in form %}
-      &emsp;   {{ field.errors }}<br />
-      &emsp;    {{ field.help_text }}<br />
-      &emsp;   {{ field }}
+     {% for field in form %}
+     {{ field.errors }}<br />
+     {{ field.help_text }}<br />
+     {{ field }}
       {% endfor %}
     
       <br />
-      &emsp; <input type="submit" name="submit" style="background-color: grey; border: none" />
+      <input type="submit" name="submit" />
   
     </form>
 </div>

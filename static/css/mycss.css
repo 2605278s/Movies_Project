@@ -4,3 +4,78 @@
 .padding60 {
 	padding: 25px 50px 75px 100px;
 }
+.title {
+    margin-left: 80px;
+}
+.info{
+    margin-left:90px;
+}
+.photo{
+    float:right;
+    width:35%;
+    height:auto;
+    margin-right: 50px;
+}
+.photo2{
+    float:right;
+    width:0.5%;
+    height:auto;
+    margin-right: 500px; 
+}
+.description{
+    margin-left:100px;
+    margin-top:30px;
+}
+.desc-text{
+    width:750px;
+    margin:60px;
+    text-align:justify;
+    margin-top:-10px;
+}   
+.trailer{
+    float:right;
+    margin-top:125px;
+    width:500px;
+    height:300px;
+    margin-right:-300px;
+}
+.review-title{
+    margin-left:100px;
+    margin-top:40px;
+    margin-bottom:20px;
+}
+.review-text{
+    margin-left:90px;
+    margin-top:5px;   
+}
+.heading{
+    margin-left:50px;
+    margin-top:20px;
+}
+.contact-info{
+    margin-left:50px;
+}
+.login-heading{
+    margin-left:170px;
+}
+.gmail{
+    float:left;
+    width:3%;
+    height:auto;
+    margin-left:150px;
+}
+.gmail-url{
+    margin-left:10px;
+    font-size:25px;
+}
+.new-user{
+    margin-top:50px;
+    margin-left:150px;
+}
+.gmail-main{
+    margin-top: 20px;
+}
+.statistics{
+    margin-left:50px;
+    font-size: 15px;
+}

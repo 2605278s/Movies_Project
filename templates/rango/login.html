@@ -10,25 +10,10 @@
 
 {% block body_block %}
     <br />
-  <h1> &emsp; &emsp; &emsp; &emsp; Login:</h1><br />
+  <h1 class="login-heading"> Login:</h1><br />
 
 
 <div class="container">
-
-    
-
-  
-  
- 
-    {% if user.is_authenticated %}
-        <script>
-        window.location.href = "{% url 'rango:index' %}";
-        </script>
-  <p>Welcome, You are logged in as {{ user.username }}</p>
-    {% else %}
-    
-  <a href="{% provider_login_url 'google' %}">Login With Google</a>
-    {% endif %}
 
     <form class="form-signin" role="form" method="post" action=".">
     {% csrf_token %}
@@ -39,9 +24,20 @@
     <input type="password" name="password" id="id_password" class="form-control"
     placeholder="Password" required><br />
     <button class="btn btn-lg btn-primary btn-block" type="submit"
-    value="Submit" style="background-color: grey; border: none">Sign in</button>
+    value="Submit">Sign in</button>
     </form> </div>
     
+    {% if user.is_authenticated %}
+    <script>
+    window.location.href = "{% url 'rango:index' %}";
+    </script>
+<p>Welcome, You are logged in as {{ user.username }}</p>
+{% else %}
+<div class="gmail-main"><img class="gmail" src="{% static 'images/gmail.jpg' %}"
+  alt="Photo of Gmail"/>
+<a href="{% provider_login_url 'google' %}" class="gmail-url"> OR login via Google.</a>
+{% endif %}
 
-
+<h2 class="new-user">New user? Sign up <a href=http://127.0.0.1:8000/rango/register>HERE!</a></h2>
+</div>
 {% endblock %}
