@@ -140,3 +140,9 @@
     background-repeat: repeat;
     height: 100vh;
 }
+.about{
+    margin-left:60px;
+    text-align: justify;
+    width: 800px;
+    margin-top:30px;
+}
