@@ -11,9 +11,11 @@
 
 {% block body_block %}
     {% if category %}
-    <h1>&emsp;{{ category.name }}</h1>
+    <div class="cat-background">
+        <br/>
+    <h1 class="category-name">{{ category.name }}</h1>
     {% if pages %}
-    <ul>
+    <ul class="cat-list">
         {% for page in pages %}
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}
@@ -28,4 +30,6 @@
         {% else %}
             The specified category does not exist.
         {% endif %}
+
+    </div>
 {% endblock %}

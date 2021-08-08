@@ -84,7 +84,59 @@
     margin-left:50px;
     font-size: 15px;
 }
-.best-rated{
+.best{
     float:right; 
+    margin-right:150px;
+    padding-bottom : 60px ;
 }
-
+.best-rated{
+    padding:30px;
+    border-style: double;
+    border-radius: 5px;
+}
+.most-reviewed{
+    margin-top:20px;
+    padding:30px;
+    border-style: double;
+    border-radius: 5px; 
+}
+.new{
+    padding:70px;
+    
+    margin-left:100px;
+    margin-right:450px;
+    border-style: double;
+    border-radius: 5px; 
+    background: url("/static/images/home3.jpg") 0 no-repeat fixed;
+    background-size: 1000px 500px;
+    color:white;
+    text-align:justify;
+    width:900px;
+    
+}
+.welcome{
+    margin-top:20px;
+    text-align: center;
+}
+.welcome2{
+    text-align: center;
+}
+.new-add{
+    margin-top:30px;
+}
+.category-name{
+    margin-left:100px;
+    color:white;
+}
+.cat-list{
+    margin-left:120px;
+    margin-top: 15px;
+    font-size: 25px;
+    color:white;
+}
+.cat-background{
+    background: url("/static/images/cinema1.jpg");
+    background-size: 1000px 500px;
+    background-repeat: repeat;
+    height: 100vh;
+}

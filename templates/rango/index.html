@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block body_block %}
-<center><h1>Welcome to Moʃvies,</h1>
-<div> 
+<h1 class="welcome">Welcome to Moʃvies,</h1>
+<div class="welcome2"> 
 {% if user.is_authenticated %}
   <h4>{{ user.username }}!</h4> 
 {% else %}
@@ -15,9 +15,10 @@
 {% endif %}
 <br />
  
-</div></center>
+</div>
 
-<div class="best-rated">
+<div class="best">
+    <div class="best-rated">
      <h2> Best rated: </h2>
     {% if categories %}
     <ul>
@@ -28,7 +29,8 @@
 {% else %}
     <strong>There are no categories present.</strong>
 {% endif %}
- 
+</div>
+<div class="most-reviewed"> 
       <h2>Most reviewed:</h2>
 {% if pages %}
     <ul>
@@ -40,6 +42,12 @@
     <strong>There are no pages present.</strong>
 {% endif %}
 </div>
+</div>
 
+<div class="new">
+<h1 class="new-add">New addition</h1>
+<h3>Home Alone</h3><br/>
+<p>When bratty 8-year-old Kevin McCallister (Macaulay Culkin) acts out the night before a family trip to Paris, his mother (Catherine O'Hara) makes him sleep in the attic. After the McCallisters mistakenly leave for the airport without Kevin, he awakens to an empty house and assumes his wish to have no family has come true. But his excitement sours when he realizes that two con men (Joe Pesci, Daniel Stern) plan to rob the McCallister residence, and that he alone must protect the family home.</p>
+</div>
 
 {% endblock %}
